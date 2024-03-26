@@ -11,12 +11,34 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nerlfield.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First_tag</title>
-      <link>https://nerlfield.github.io/tags/first_tag/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://nerlfield.github.io/tags/first_tag/</guid>
+      <title>JavaScript</title>
+      <link>https://nerlfield.github.io/tags/javascript/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://nerlfield.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mathematics</title>
+      <link>https://nerlfield.github.io/tags/mathematics/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://nerlfield.github.io/tags/mathematics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Particle Systems</title>
+      <link>https://nerlfield.github.io/tags/particle-systems/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://nerlfield.github.io/tags/particle-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://nerlfield.github.io/tags/programming/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://nerlfield.github.io/tags/programming/</guid>
       <description></description>
     </item>
   </channel>

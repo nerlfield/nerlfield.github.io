@@ -11,13 +11,14 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nerlfield.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My first post</title>
-      <link>https://nerlfield.github.io/posts/emoji-support/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://nerlfield.github.io/posts/emoji-support/</guid>
-      <description>Here is my first post in this blog. I will test hugo&amp;#39;s functionality, try different content blocks, and in general I will experiment =)</description>
+      <title>Exploring the Beauty of Particle Systems</title>
+      <link>https://nerlfield.github.io/posts/particle-life/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://nerlfield.github.io/posts/particle-life/</guid>
+      <description>This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules.</description>
     </item>
   </channel>
 </rss>
