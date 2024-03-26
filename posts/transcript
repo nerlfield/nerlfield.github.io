@@ -1,0 +1,584 @@
+0:00
+there is this beautiful particle system
+0:02
+called particle life it's fascinating
+0:05
+Behavior simply arises from random
+0:07
+asymmetrical attraction
+0:09
+I will now first explain the simple
+0:11
+rules of this particle system using
+0:13
+mathematical notation and then I will
+0:15
+show you an example implementation in
+0:17
+JavaScript
+0:18
+my goal is that you can then go ahead
+0:20
+and write your own implementation of
+0:21
+particle life because I think this
+0:23
+particle system deserves a lot more
+0:25
+attention and people playing around with
+0:27
+it
+0:28
+I also hope that this video will help
+0:30
+using a common notation across different
+0:32
+implementations of particle life
+0:34
+if you only want to see footage of
+0:36
+particle live check out the other video
+0:38
+on my channel and on particlelife.com
+0:40
+you can download an Advanced Simulator
+0:42
+for particle life
+0:43
+[Music]
+0:48
+alright each particle has three
+0:50
+properties
+0:52
+a constant color or type which is simply
+0:54
+an integer
+0:56
+and a position and a velocity both of
+0:59
+which are real vectors
+1:01
+and as in physics the velocity here is
+1:03
+written as the time derivative of the
+1:05
+position indicated by the little dot on
+1:07
+top of the position variable
+1:09
+a particle is only affected by particles
+1:12
+that are closer than one distance unit
+1:15
+and for each of these particles we
+1:17
+compute The Distance by subtracting the
+1:19
+coordinates and taking the length of
+1:22
+that vector
+1:23
+and we plug that into the force function
+1:25
+that tells us how strong the forces that
+1:28
+pulls this particle in the direction of
+1:30
+the other particle
+1:32
+and there's also another thing that we
+1:33
+need to compute the magnitude of the
+1:35
+force the attraction Factor
+1:38
+we have a matrix a that tells us for
+1:40
+each combination of colors how strongly
+1:43
+two particles of these colors should be
+1:45
+attracted to or repelled by each other
+1:48
+since we know the colors of both
+1:50
+particles we can simply look into the
+1:52
+corresponding row and column to fetch
+1:54
+the attraction factor a
+1:56
+and we will also plug that into the
+1:58
+force function
+2:01
+and how does this Force function work
+2:03
+there are multiple ways to do this but I
+2:05
+found the following to be easy to
+2:07
+implement while still producing good
+2:08
+lucking results
+2:10
+I have a linear repulsive force that is
+2:12
+initially negative one and then reaches
+2:14
+0 at some constant radius beta I always
+2:17
+choose beta equal to 0.3 but that's just
+2:20
+a random choice of mine and then comes
+2:23
+the attractive part which consists of
+2:24
+two linear parts that are scaled
+2:26
+proportional to the attraction Factor
+2:29
+and here's how this would look in
+2:31
+JavaScript
+2:33
+but the exact shape of the function is
+2:35
+not really important all you need is a
+2:37
+universal repulsive part and another
+2:40
+part that is proportional to the
+2:42
+attraction factor and then the results
+2:44
+will look similar
+2:46
+the magnitude of the force can vary but
+2:49
+we always want the force to act in the
+2:51
+direction of the other particle
+2:53
+which is why we multiply the magnitude
+2:55
+of the force with a unit Vector that
+2:57
+points in this direction
+3:01
+we repeat this for all particles inside
+3:03
+the maximum radius and add up the
+3:06
+results
+3:09
+and if we assume that all particles have
+3:12
+a mass of one this finally gives us the
+3:14
+acceleration for this particle
+3:17
+and here the acceleration is written as
+3:19
+the second time derivative of the
+3:20
+position indicated by the two dots on
+3:22
+top of the position variable
+3:25
+and we can hide the indices to make this
+3:27
+formula look less crowded
+3:30
+now usually when implementing this you
+3:33
+don't want the maximum radius of
+3:34
+interaction to be one distance unit for
+3:37
+example if your coordinates are
+3:38
+expressed in terms of pixels one pixel
+3:40
+would be too small
+3:41
+but the force function is expecting
+3:43
+distances in the range of 0 to 1.
+3:46
+to account for this we simply divide the
+3:48
+Distance by R Max before we send it to
+3:51
+the force function
+3:52
+and that way it's in the range of 0 to 1
+3:54
+again
+3:55
+then we just have to scale the result by
+3:57
+R Max afterwards
+4:00
+so let's summarize
+4:01
+to compute the acceleration of a
+4:03
+particle we sum over all other particles
+4:07
+for each other particle we compute the
+4:09
+force based on the normalized distance
+4:11
+and on the attraction Factor
+4:14
+we apply the force in the direction of
+4:16
+the other particle and then scale the
+4:18
+result by R Max
+4:19
+particle life is obviously not physical
+4:22
+just as Conway's Game of Life is not
+4:24
+physical
+4:25
+for example if the attraction Matrix is
+4:27
+not symmetrical particle life is
+4:29
+breaking Newton's Third Law of equal and
+4:31
+opposite forces and this also means that
+4:34
+there is no energy conservation in the
+4:36
+system particles can just build up
+4:38
+energy forever and that's why we need
+4:40
+friction
+4:41
+when we want to transform our computed
+4:43
+acceleration into changes in velocity
+4:45
+and position we need to choose a
+4:47
+timestep delta T for each frame that
+4:49
+we're simulating and multiply the
+4:51
+acceleration with that time step and add
+4:53
+it to the existing velocity
+4:55
+and then we do the same with a new
+4:56
+velocity and the existing position
+5:00
+but in order to introduce friction we
+5:02
+multiply the existing velocity with a
+5:04
+constant between 0 and 1 before we do
+5:06
+all of this
+5:08
+a more elegant way to write this is in
+5:10
+terms of the half-life that's just a
+5:12
+constant that tells us after how much
+5:14
+time half of the Velocity should be lost
+5:16
+due to friction and this way our
+5:19
+simulation doesn't depend on the exact
+5:21
+value of delta T and this means that we
+5:23
+can for example adjust delta T depending
+5:25
+on the current frame rate of the
+5:27
+software and give the simulation a
+5:29
+smoother feeling
+5:29
+[Music]
+5:31
+there is a problem with integrating the
+5:33
+acceleration like this sometimes we see
+5:35
+these 10 spots getting the Zoomies
+5:38
+and people who are new to this often
+5:39
+find this very exciting but this
+5:41
+phenomenon is not something innate to
+5:43
+particle life it's just an artifact of
+5:46
+our discrete computations
+5:48
+it happens in areas with high density of
+5:50
+particles that are attracted to each
+5:52
+other and the forces are really strong
+5:54
+and point towards the center
+5:56
+now our time step is so big that all
+5:59
+particles just jump across the center
+6:02
+if we choose a smaller delta T to
+6:04
+actually see what's going on we see how
+6:06
+the whole situation calms down and
+6:08
+stabilizes
+6:11
+foreign
+6:15
+[Music]
+6:20
+here's an overview over all the
+6:22
+variables and parameters that we need to
+6:24
+describe our system
+6:26
+to get started we have to say how many
+6:28
+particles colors and dimensions we have
+6:30
+in our system these parameters basically
+6:32
+tell us how much memory we need to
+6:34
+allocate in order to simulate the system
+6:37
+the attraction Matrix and the friction
+6:38
+Half-Life describe the behavior of the
+6:41
+particle system and are therefore the
+6:43
+most important parameters
+6:45
+the time step and the maximum radius are
+6:48
+not really parameters of the particle
+6:49
+system itself but we usually have them
+6:52
+in our code when simulating this
+6:53
+particle system
+6:55
+now here I'm already writing some
+6:56
+boilerplate code in JavaScript
+6:58
+you can of course do this in any
+7:00
+language I just chose JavaScript for
+7:02
+this tutorial because it's a very
+7:04
+popular language
+7:06
+so first I Define some parameters that
+7:08
+we just talked about and initialize a
+7:10
+random attraction Matrix with the values
+7:12
+between negative 1 and 1.
+7:16
+then I create some arrays that store the
+7:18
+properties of all particles
+7:20
+I initialize all colors with random
+7:23
+integers between 0 and M minus 1. all
+7:26
+positions with random floats between 0
+7:28
+and 1 and the velocities with zero
+7:32
+then I create a loop that updates and
+7:34
+draws these particles
+7:36
+drawing the particles is pretty
+7:38
+straightforward you just have to scale
+7:40
+them up to screen coordinates
+7:42
+for the colors I set the Hue value to
+7:45
+the integer value divided by the number
+7:47
+of colors
+7:51
+updating the positions is also pretty
+7:53
+straightforward we simply add the
+7:55
+velocity times delta T as we discussed
+7:57
+earlier
+7:59
+to update the velocities we need to look
+8:00
+at every pair of particles that's why
+8:03
+I'm creating a nested for Loop here
+8:05
+and I make sure to skip the particle
+8:08
+itself when looking at the neighbors
+8:10
+and I checked that the distance value is
+8:12
+actually greater than zero and smaller
+8:14
+than the maximum radius
+8:16
+then I normalize the distance and plug
+8:19
+it into the force function together with
+8:21
+the attraction factor which I fetch from
+8:23
+The Matrix
+8:24
+and then scale the directions unit
+8:26
+Vector with that value
+8:29
+after adding up all these results I
+8:31
+scale them by rmx and add them to the
+8:33
+velocity
+8:34
+and before I add them I also apply the
+8:37
+friction Factor
+8:39
+then I implement the force function and
+8:41
+we're done
+8:42
+but right now nothing is happening in
+8:44
+our particle system because the maximum
+8:45
+Force value is just one
+8:48
+and we would have to wait ages for
+8:49
+something interesting to happen so we
+8:51
+can simply introduce a new variable and
+8:53
+scale all forces with that constant
+8:55
+value
+9:01
+now we can easily make this 3D by simply
+9:04
+adding additional arrays for the Z
+9:06
+coordinate and respecting the new
+9:08
+coordinate in all relevant parts of the
+9:10
+code
+9:12
+and to render the particles with a 3D
+9:14
+perspective I let the coordinates range
+9:16
+from negative one to one and then scale
+9:18
+the screen coordinates based on the Z
+9:20
+coordinate
+9:21
+and then realize again that nothing is
+9:23
+happening because particles in 3D are
+9:25
+now scattered further apart
+9:28
+so we simply increase our maximum radius
+9:30
+to make everything feel closer together
+9:33
+now there are two further things you
+9:35
+probably want to do from here on
+9:37
+firstly you could introduce periodic
+9:39
+boundary conditions so that the
+9:40
+particles don't leave the screen and
+9:43
+secondly you can Implement a space
+9:44
+partitioning so that you don't have to
+9:46
+check all n Square pairs of particles
+9:49
+this will make your simulation much
+9:51
+faster
+9:52
+and this is even more important than
+9:53
+using a fast programming language or
+9:56
+optimizing your code in any other way
+9:59
+and I think I will leave it at that for
+10:00
+now I will make more of these kinds of
+10:02
+videos so if you like them consider
+10:04
+subscribing and remember that you can
+10:06
+download the simulator from
+10:07
+particlelife.com for which contributions
+10:09
+on GitHub are also very appreciated by
+10:12
+the way and we also have a Discord
+10:14
+server for particle life that is linked
+10:16
+in the description
+10:18
+thank you so much for watching
+10:19
+[Music]
+10:21
+foreign
+10:27
+foreign

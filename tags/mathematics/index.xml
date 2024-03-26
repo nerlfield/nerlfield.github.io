@@ -14,11 +14,11 @@
     <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nerlfield.github.io/tags/mathematics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Exploring the Beauty of Particle Systems</title>
+      <title>The Intriguing World of Particle Life</title>
       <link>https://nerlfield.github.io/posts/particle-life/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://nerlfield.github.io/posts/particle-life/</guid>
-      <description>This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules.</description>
+      <description>Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating.</description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Exploring the Beauty of Particle Systems | 🤖nerlfield👨🏻‍💻</title>
+<title>The Intriguing World of Particle Life | 🤖nerlfield👨🏻‍💻</title>
 <meta name="keywords" content="particle systems, programming, mathematics, JavaScript">
-<meta name="description" content="This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules.">
+<meta name="description" content="Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating.">
 <meta name="author" content="Daniel Kovalenko">
 <link rel="canonical" href="https://nerlfield.github.io/posts/particle-life/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5ff2630c4d1b3e25bc21f0ecd96681dbcf58219e741fa627857820b5485cb770.css" integrity="sha256-X/JjDE0bPiW8IfDs2WaB289YIZ50H6YnhXggtUhct3A=" rel="preload stylesheet" as="style">
@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-<meta property="og:title" content="Exploring the Beauty of Particle Systems" />
-<meta property="og:description" content="This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules." />
+<meta property="og:title" content="The Intriguing World of Particle Life" />
+<meta property="og:description" content="Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nerlfield.github.io/posts/particle-life/" />
 <meta property="og:image" content="https://nerlfield.github.io/images/papermod-cover.png" />
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://nerlfield.github.io/images/papermod-cover.png" />
-<meta name="twitter:title" content="Exploring the Beauty of Particle Systems"/>
-<meta name="twitter:description" content="This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules."/>
+<meta name="twitter:title" content="The Intriguing World of Particle Life"/>
+<meta name="twitter:description" content="Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating."/>
 
 
 <script type="application/ld+json">
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Exploring the Beauty of Particle Systems",
+      "name": "The Intriguing World of Particle Life",
       "item": "https://nerlfield.github.io/posts/particle-life/"
     }
   ]
@@ -113,14 +113,14 @@ document.addEventListener("DOMContentLoaded", function() {
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Exploring the Beauty of Particle Systems",
-  "name": "Exploring the Beauty of Particle Systems",
-  "description": "This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules.",
+  "headline": "The Intriguing World of Particle Life",
+  "name": "The Intriguing World of Particle Life",
+  "description": "Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating.",
   "keywords": [
     "particle systems", "programming", "mathematics", "JavaScript"
   ],
-  "articleBody": "In the realm of computer science and physics, the study of particle systems holds a unique place for its ability to simulate complex systems from the ground up. One variant, known as Particle Life, captivates with its simplicity and the emergent behaviors that arise from it. In this post, we’ll explore the mathematical underpinnings of Particle Life and provide a guide to implementing your own version in JavaScript, encouraging further exploration and creativity in this fascinating field.\nThe Foundations of Particle Life At its core, Particle Life is defined by simple rules applied to particles moving in a space. These particles are characterized by three main properties:\nColor/Type: An integer representing the particle’s type. Position: A vector in real space indicating the particle’s location. Velocity: Also a vector, representing the rate of change of the particle’s position over time. The interaction between particles is governed by a set of rules, primarily focusing on how particles attract or repel each other based on their type and distance. The force of attraction or repulsion is calculated using a combination of the distance between particles and a predefined attraction matrix that dictates the nature of interactions based on particle types.\nMathematical Description Let’s delve into the math that models these interactions. For two particles, (i) and (j), with positions $\\vec{p}_i$ and $\\vec{p}_j$, the force (F) exerted on (i) by (j) can be calculated as:\n$$F(\\vec{p}_i, \\vec{p}_j, A_{ij}) = A_{ij} \\cdot f\\left(\\frac{|\\vec{p}_i - \\vec{p}_j|}{R_{max}}\\right) \\cdot \\frac{\\vec{p}_j - \\vec{p}_i}{|\\vec{p}_j - \\vec{p}_i|}$$\nwhere:\n\\(A_{ij}\\) is the attraction factor between particles \\(i\\) and \\(j\\), fetched from the attraction matrix based on their types. \\(f\\) is the force function, dependent on the normalized distance between the particles, scaled by the maximum interaction radius \\(R_{max}\\). The vector direction from \\(i\\) to \\(j\\) is normalized to ensure that the force is applied in the direction of particle \\(j\\). Implementation Insights The beauty of Particle Life lies not just in its mathematical formulation but in its flexibility across implementations. The choice of the force function, (f), and the attraction matrix, (A), allows for a wide range of behaviors and patterns to emerge from seemingly simple setups.\nJavaScript Implementation In a practical JavaScript implementation, the process involves initializing particles with random positions and velocities, and then iteratively updating their positions and velocities based on the forces calculated from their interactions. This involves a loop through all particle pairs, computing forces, and adjusting velocities and positions accordingly.\nOne critical aspect of the implementation is the introduction of a friction factor to simulate energy dissipation, preventing perpetual acceleration of particles and ensuring the system reaches a form of dynamic equilibrium.\nWhy Particle Life Matters The study and simulation of Particle Life offer a window into the complex behaviors that can arise from simple rules. It serves as a metaphor for natural systems, from the microscale interactions within materials to the macroscale dynamics of celestial bodies. By experimenting with different parameters and rules, researchers and hobbyists alike can uncover surprising patterns and deepen our understanding of emergent phenomena.\nGet Involved For those intrigued by the possibilities of Particle Life, the journey doesn’t end with understanding its principles. The real magic happens when you dive into the code, tweaking parameters, and observing the outcomes. Whether you’re a seasoned programmer or a curious newcomer, the world of particle systems is rich with opportunities for exploration and creativity.\nRemember, the beauty of Particle Life lies in the diversity of its implementations. By sharing your versions and exploring others, we can collectively uncover the vast potential of this simple yet profound system. Visit particlelife.com to download advanced simulators, contribute to ongoing projects, and\n",
-  "wordCount" : "604",
+  "articleBody": "In this post, we shall delve into the intricate domain of particle systems, where elementary rules orchestrate a complex array of behaviors. Our discourse will elucidate the principles of Particle Life, enhancing your comprehension of the sophisticated emergent phenomena characteristic of computational simulations.\nFor an interactive experience, try out my demo at nerlfield.github.io/particle-life.\nUnveiling Particle Life Particle Life is a captivating concept within particle systems, characterized by its straightforward rules that govern the motion and interaction of particles within a defined space. Each particle is described by:\nType: Represented by an integer, indicating the particle’s category. Position: A vector that denotes the particle’s coordinates in space. Velocity: A vector that reflects the particle’s speed and direction. The crux of Particle Life lies in the interactions between particles, which are influenced by their type and proximity. These interactions are quantified by an attraction matrix, which, along with the distance between particles, determines the forces of attraction or repulsion.\nMathematical Underpinnings The mathematical framework of Particle Life is both elegant and simple. Consider two particles, (i) and (j), with positions $\\vec{p}_i$ and $\\vec{p}_j$. The force (F) exerted on particle (i) by particle (j) is given by:\n$$F(\\vec{p}_i, \\vec{p}_j, A_{ij}) = A_{ij} \\cdot f\\left(\\frac{|\\vec{p}_i - \\vec{p}_j|}{R_{max}}\\right) \\cdot \\frac{\\vec{p}_j - \\vec{p}_i}{|\\vec{p}_j - \\vec{p}_i|}$$\nHere:\n$A_{ij}$ is the attraction factor from the attraction matrix for particles (i) and (j). (f) is a function that modulates the force based on the normalized distance, scaled by the maximum interaction radius $R_{max}$. The direction vector is normalized to ensure the force is directed towards particle (j). Implementation Overview Particle Life’s adaptability is clear in its various complex implementations. Choosing the right force function (f) and attraction matrix (A) is crucial for creating a range of patterns from simple beginnings.\nReference Implementation Visit github.com/nerlfield/particle-life for a reference implementation. It includes a friction element to mimic energy loss, preventing endless acceleration and allowing equilibrium.\nParticle Life’s Importance More than a simulation, Particle Life shows how simple rules can lead to complex behaviors, reflecting natural phenomena and offering insights into emergent systems.\nEngage with Particle Life The exploration of Particle Life extends beyond theory. Engaging with the code, tweaking variables, and observing the results is where the true enchantment lies. Whether you’re an experienced developer or a curious enthusiast, the domain of particle systems beckons with its promise of discovery and innovation.\nThe essence of Particle Life is in its diverse interpretations. By sharing your creations and delving into the work of others, we can collectively explore the profound capabilities of this simple yet intricate system. For a deeper dive, consider visiting particlelife.com for advanced simulators and collaborative projects.\nIf your interest in computational models of life has been piqued, don’t miss the opportunity to read about cellular automata in the context of lizard patterns at distill.pub/2020/growing-ca. It’s a recommended read for anyone fascinated by the principles of Particle Life.\nFor a comprehensive overview and explanation of Particle Life, check out this insightful YouTube video: youtu.be/p4YirERTVF0?si=0rFTyCJebBuJb0nW.\n",
+  "wordCount" : "495",
   "inLanguage": "en",
   "image": "https://nerlfield.github.io/images/papermod-cover.png","datePublished": "2024-03-20T00:00:00Z",
   "dateModified": "2024-03-20T00:00:00Z",
@@ -213,10 +213,10 @@ document.addEventListener("DOMContentLoaded", function() {
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Exploring the Beauty of Particle Systems
+      The Intriguing World of Particle Life
     </h1>
     <div class="post-description">
-      This blog post embarks on a fascinating journey into the world of particle systems, focusing on a particularly intriguing variant known as Particle Life. Through a combination of mathematical explanations and practical JavaScript implementation examples, we aim to illuminate the complex yet beautiful behaviors that emerge from simple rules.
+      Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating.
     </div>
     <div class="post-meta"><span title='2024-03-20 00:00:00 +0000 UTC'>March 20, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Daniel Kovalenko&nbsp;|&nbsp;<a href="https://github.com/nerlfield/nerlfield.github.io/tree/main/posts/particle-life.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
@@ -229,56 +229,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#the-foundations-of-particle-life" aria-label="The Foundations of Particle Life">The Foundations of Particle Life</a><ul>
+                    <a href="#unveiling-particle-life" aria-label="Unveiling Particle Life">Unveiling Particle Life</a><ul>
                         
                 <li>
-                    <a href="#mathematical-description" aria-label="Mathematical Description">Mathematical Description</a></li>
+                    <a href="#mathematical-underpinnings" aria-label="Mathematical Underpinnings">Mathematical Underpinnings</a></li>
                 <li>
-                    <a href="#implementation-insights" aria-label="Implementation Insights">Implementation Insights</a><ul>
+                    <a href="#implementation-overview" aria-label="Implementation Overview">Implementation Overview</a><ul>
                         
                 <li>
-                    <a href="#javascript-implementation" aria-label="JavaScript Implementation">JavaScript Implementation</a></li></ul>
+                    <a href="#reference-implementation" aria-label="Reference Implementation">Reference Implementation</a></li></ul>
                 </li></ul>
                 </li>
                 <li>
-                    <a href="#why-particle-life-matters" aria-label="Why Particle Life Matters">Why Particle Life Matters</a></li>
+                    <a href="#particle-lifes-importance" aria-label="Particle Life&rsquo;s Importance">Particle Life&rsquo;s Importance</a></li>
                 <li>
-                    <a href="#get-involved" aria-label="Get Involved">Get Involved</a>
+                    <a href="#engage-with-particle-life" aria-label="Engage with Particle Life">Engage with Particle Life</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p>In the realm of computer science and physics, the study of particle systems holds a unique place for its ability to simulate complex systems from the ground up. One variant, known as Particle Life, captivates with its simplicity and the emergent behaviors that arise from it. In this post, we&rsquo;ll explore the mathematical underpinnings of Particle Life and provide a guide to implementing your own version in JavaScript, encouraging further exploration and creativity in this fascinating field.</p>
+  <div class="post-content"><p>In this post, we shall delve into the intricate domain of particle systems, where elementary rules orchestrate a complex array of behaviors. Our discourse will elucidate the principles of Particle Life, enhancing your comprehension of the sophisticated emergent phenomena characteristic of computational simulations.</p>
+<p>For an interactive experience, try out my demo at <a href="https://nerlfield.github.io/particle-life/">nerlfield.github.io/particle-life</a>.</p>
 <iframe width="640" height="360" frameborder="0" src="https://nerlfield.github.io/particle-life/" allowfullscreen></iframe>
-<h2 id="the-foundations-of-particle-life">The Foundations of Particle Life<a hidden class="anchor" aria-hidden="true" href="#the-foundations-of-particle-life">#</a></h2>
-<p>At its core, Particle Life is defined by simple rules applied to particles moving in a space. These particles are characterized by three main properties:</p>
+<h2 id="unveiling-particle-life">Unveiling Particle Life<a hidden class="anchor" aria-hidden="true" href="#unveiling-particle-life">#</a></h2>
+<p>Particle Life is a captivating concept within particle systems, characterized by its straightforward rules that govern the motion and interaction of particles within a defined space. Each particle is described by:</p>
 <ol>
-<li><strong>Color/Type:</strong> An integer representing the particle&rsquo;s type.</li>
-<li><strong>Position:</strong> A vector in real space indicating the particle&rsquo;s location.</li>
-<li><strong>Velocity:</strong> Also a vector, representing the rate of change of the particle&rsquo;s position over time.</li>
+<li><strong>Type:</strong> Represented by an integer, indicating the particle&rsquo;s category.</li>
+<li><strong>Position:</strong> A vector that denotes the particle&rsquo;s coordinates in space.</li>
+<li><strong>Velocity:</strong> A vector that reflects the particle&rsquo;s speed and direction.</li>
 </ol>
-<p>The interaction between particles is governed by a set of rules, primarily focusing on how particles attract or repel each other based on their type and distance. The force of attraction or repulsion is calculated using a combination of the distance between particles and a predefined attraction matrix that dictates the nature of interactions based on particle types.</p>
-<h3 id="mathematical-description">Mathematical Description<a hidden class="anchor" aria-hidden="true" href="#mathematical-description">#</a></h3>
-<p>Let&rsquo;s delve into the math that models these interactions. For two particles, (i) and (j), with positions $\vec{p}_i$ and $\vec{p}_j$, the force (F) exerted on (i) by (j) can be calculated as:</p>
+<p>The crux of Particle Life lies in the interactions between particles, which are influenced by their type and proximity. These interactions are quantified by an attraction matrix, which, along with the distance between particles, determines the forces of attraction or repulsion.</p>
+<h3 id="mathematical-underpinnings">Mathematical Underpinnings<a hidden class="anchor" aria-hidden="true" href="#mathematical-underpinnings">#</a></h3>
+<p>The mathematical framework of Particle Life is both elegant and simple. Consider two particles, (i) and (j), with positions $\vec{p}_i$ and $\vec{p}_j$. The force (F) exerted on particle (i) by particle (j) is given by:</p>
 <p>$$F(\vec{p}_i, \vec{p}_j, A_{ij}) = A_{ij} \cdot f\left(\frac{|\vec{p}_i - \vec{p}_j|}{R_{max}}\right) \cdot \frac{\vec{p}_j - \vec{p}_i}{|\vec{p}_j - \vec{p}_i|}$$</p>
-<p>where:</p>
+<p>Here:</p>
 <ul>
-<li>\(A_{ij}\) is the attraction factor between particles \(i\) and \(j\), fetched from the attraction matrix based on their types.</li>
-<li>\(f\) is the force function, dependent on the normalized distance between the particles, scaled by the maximum interaction radius \(R_{max}\).</li>
-<li>The vector direction from \(i\) to \(j\) is normalized to ensure that the force is applied in the direction of particle \(j\).</li>
+<li>$A_{ij}$ is the attraction factor from the attraction matrix for particles (i) and (j).</li>
+<li>(f) is a function that modulates the force based on the normalized distance, scaled by the maximum interaction radius $R_{max}$.</li>
+<li>The direction vector is normalized to ensure the force is directed towards particle (j).</li>
 </ul>
-<h3 id="implementation-insights">Implementation Insights<a hidden class="anchor" aria-hidden="true" href="#implementation-insights">#</a></h3>
-<p>The beauty of Particle Life lies not just in its mathematical formulation but in its flexibility across implementations. The choice of the force function, (f), and the attraction matrix, (A), allows for a wide range of behaviors and patterns to emerge from seemingly simple setups.</p>
-<h4 id="javascript-implementation">JavaScript Implementation<a hidden class="anchor" aria-hidden="true" href="#javascript-implementation">#</a></h4>
-<p>In a practical JavaScript implementation, the process involves initializing particles with random positions and velocities, and then iteratively updating their positions and velocities based on the forces calculated from their interactions. This involves a loop through all particle pairs, computing forces, and adjusting velocities and positions accordingly.</p>
-<p>One critical aspect of the implementation is the introduction of a friction factor to simulate energy dissipation, preventing perpetual acceleration of particles and ensuring the system reaches a form of dynamic equilibrium.</p>
-<h2 id="why-particle-life-matters">Why Particle Life Matters<a hidden class="anchor" aria-hidden="true" href="#why-particle-life-matters">#</a></h2>
-<p>The study and simulation of Particle Life offer a window into the complex behaviors that can arise from simple rules. It serves as a metaphor for natural systems, from the microscale interactions within materials to the macroscale dynamics of celestial bodies. By experimenting with different parameters and rules, researchers and hobbyists alike can uncover surprising patterns and deepen our understanding of emergent phenomena.</p>
-<h2 id="get-involved">Get Involved<a hidden class="anchor" aria-hidden="true" href="#get-involved">#</a></h2>
-<p>For those intrigued by the possibilities of Particle Life, the journey doesn&rsquo;t end with understanding its principles. The real magic happens when you dive into the code, tweaking parameters, and observing the outcomes. Whether you&rsquo;re a seasoned programmer or a curious newcomer, the world of particle systems is rich with opportunities for exploration and creativity.</p>
-<p>Remember, the beauty of Particle Life lies in the diversity of its implementations. By sharing your versions and exploring others, we can collectively uncover the vast potential of this simple yet profound system. Visit particlelife.com to download advanced simulators, contribute to ongoing projects, and</p>
+<h3 id="implementation-overview">Implementation Overview<a hidden class="anchor" aria-hidden="true" href="#implementation-overview">#</a></h3>
+<p>Particle Life&rsquo;s adaptability is clear in its various complex implementations. Choosing the right force function (f) and attraction matrix (A) is crucial for creating a range of patterns from simple beginnings.</p>
+<h4 id="reference-implementation">Reference Implementation<a hidden class="anchor" aria-hidden="true" href="#reference-implementation">#</a></h4>
+<p>Visit <a href="https://github.com/nerlfield/particle-life/blob/main/index.html">github.com/nerlfield/particle-life</a> for a reference implementation. It includes a friction element to mimic energy loss, preventing endless acceleration and allowing equilibrium.</p>
+<h2 id="particle-lifes-importance">Particle Life&rsquo;s Importance<a hidden class="anchor" aria-hidden="true" href="#particle-lifes-importance">#</a></h2>
+<p>More than a simulation, Particle Life shows how simple rules can lead to complex behaviors, reflecting natural phenomena and offering insights into emergent systems.</p>
+<h2 id="engage-with-particle-life">Engage with Particle Life<a hidden class="anchor" aria-hidden="true" href="#engage-with-particle-life">#</a></h2>
+<p>The exploration of Particle Life extends beyond theory. Engaging with the code, tweaking variables, and observing the results is where the true enchantment lies. Whether you&rsquo;re an experienced developer or a curious enthusiast, the domain of particle systems beckons with its promise of discovery and innovation.</p>
+<p>The essence of Particle Life is in its diverse interpretations. By sharing your creations and delving into the work of others, we can collectively explore the profound capabilities of this simple yet intricate system. For a deeper dive, consider visiting <a href="https://particlelife.com">particlelife.com</a> for advanced simulators and collaborative projects.</p>
+<p>If your interest in computational models of life has been piqued, don&rsquo;t miss the opportunity to read about cellular automata in the context of lizard patterns at <a href="https://distill.pub/2020/growing-ca">distill.pub/2020/growing-ca</a>. It&rsquo;s a recommended read for anyone fascinated by the principles of Particle Life.</p>
+<p>For a comprehensive overview and explanation of Particle Life, check out this insightful YouTube video: <a href="https://youtu.be/p4YirERTVF0?si=0rFTyCJebBuJb0nW">youtu.be/p4YirERTVF0?si=0rFTyCJebBuJb0nW</a>.</p>
 
   </div>
 
@@ -293,8 +295,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <ul class="share-buttons">
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on x"
-            href="https://x.com/intent/tweet/?text=Exploring%20the%20Beauty%20of%20Particle%20Systems&amp;url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f&amp;hashtags=particlesystems%2cprogramming%2cmathematics%2cJavaScript">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on x"
+            href="https://x.com/intent/tweet/?text=The%20Intriguing%20World%20of%20Particle%20Life&amp;url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f&amp;hashtags=particlesystems%2cprogramming%2cmathematics%2cJavaScript">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -302,8 +304,8 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f&amp;title=Exploring%20the%20Beauty%20of%20Particle%20Systems&amp;summary=Exploring%20the%20Beauty%20of%20Particle%20Systems&amp;source=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f&amp;title=The%20Intriguing%20World%20of%20Particle%20Life&amp;summary=The%20Intriguing%20World%20of%20Particle%20Life&amp;source=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -311,8 +313,8 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on reddit"
-            href="https://reddit.com/submit?url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f&title=Exploring%20the%20Beauty%20of%20Particle%20Systems">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f&title=The%20Intriguing%20World%20of%20Particle%20Life">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -320,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on facebook"
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on facebook"
             href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
@@ -329,8 +331,8 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on whatsapp"
-            href="https://api.whatsapp.com/send?text=Exploring%20the%20Beauty%20of%20Particle%20Systems%20-%20https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on whatsapp"
+            href="https://api.whatsapp.com/send?text=The%20Intriguing%20World%20of%20Particle%20Life%20-%20https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -338,8 +340,8 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on telegram"
-            href="https://telegram.me/share/url?text=Exploring%20the%20Beauty%20of%20Particle%20Systems&amp;url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on telegram"
+            href="https://telegram.me/share/url?text=The%20Intriguing%20World%20of%20Particle%20Life&amp;url=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -347,8 +349,8 @@ document.addEventListener("DOMContentLoaded", function() {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Exploring the Beauty of Particle Systems on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Exploring%20the%20Beauty%20of%20Particle%20Systems&u=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share The Intriguing World of Particle Life on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=The%20Intriguing%20World%20of%20Particle%20Life&u=https%3a%2f%2fnerlfield.github.io%2fposts%2fparticle-life%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path
