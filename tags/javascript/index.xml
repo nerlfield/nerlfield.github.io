@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JavaScript on 🤖nerlfield👨🏻‍💻</title>
-    <link>http://localhost:1313/tags/javascript/</link>
+    <link>https://nerlfield.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on 🤖nerlfield👨🏻‍💻</description>
     <image>
       <title>🤖nerlfield👨🏻‍💻</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://nerlfield.github.io/images/papermod-cover.png</url>
+      <link>https://nerlfield.github.io/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nerlfield.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Intriguing World of Particle Life</title>
-      <link>http://localhost:1313/posts/particle-life/</link>
+      <link>https://nerlfield.github.io/posts/particle-life/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/particle-life/</guid>
+      <guid>https://nerlfield.github.io/posts/particle-life/</guid>
       <description>Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating.</description>
     </item>
   </channel>

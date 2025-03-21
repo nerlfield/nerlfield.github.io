@@ -2,54 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://nerlfield.github.io/tags/ai/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/llms/</loc>
+    <loc>https://nerlfield.github.io/tags/llms/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mcp/</loc>
+    <loc>https://nerlfield.github.io/tags/mcp/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/is-mcp-groundbreaking/</loc>
+    <loc>https://nerlfield.github.io/posts/is-mcp-groundbreaking/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/model-context-protocol/</loc>
+    <loc>https://nerlfield.github.io/tags/model-context-protocol/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://nerlfield.github.io/posts/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://nerlfield.github.io/tags/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/technical-standards/</loc>
+    <loc>https://nerlfield.github.io/tags/technical-standards/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://nerlfield.github.io/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
+    <loc>https://nerlfield.github.io/tags/javascript/</loc>
     <lastmod>2024-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mathematics/</loc>
+    <loc>https://nerlfield.github.io/tags/mathematics/</loc>
     <lastmod>2024-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/particle-systems/</loc>
+    <loc>https://nerlfield.github.io/tags/particle-systems/</loc>
     <lastmod>2024-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
+    <loc>https://nerlfield.github.io/tags/programming/</loc>
     <lastmod>2024-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/particle-life/</loc>
+    <loc>https://nerlfield.github.io/posts/particle-life/</loc>
     <lastmod>2024-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://nerlfield.github.io/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://nerlfield.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://nerlfield.github.io/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://nerlfield.github.io/series/</loc>
   </url>
 </urlset>
