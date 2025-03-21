@@ -2,22 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 🤖nerlfield👨🏻‍💻</title>
-    <link>https://nerlfield.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on 🤖nerlfield👨🏻‍💻</description>
     <image>
       <title>🤖nerlfield👨🏻‍💻</title>
-      <url>https://nerlfield.github.io/images/papermod-cover.png</url>
-      <link>https://nerlfield.github.io/images/papermod-cover.png</link>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nerlfield.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MCP: Technical Detail or Revolutionary Framework?</title>
+      <link>http://localhost:1313/posts/is-mcp-groundbreaking/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/is-mcp-groundbreaking/</guid>
+      <description>A deep dive into Anthropic&amp;#39;s Model Context Protocol (MCP), exploring whether this new standard for connecting AI models with external data sources represents an incremental improvement or a fundamental paradigm shift in AI development.</description>
+    </item>
     <item>
       <title>The Intriguing World of Particle Life</title>
-      <link>https://nerlfield.github.io/posts/particle-life/</link>
+      <link>http://localhost:1313/posts/particle-life/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://nerlfield.github.io/posts/particle-life/</guid>
+      <guid>http://localhost:1313/posts/particle-life/</guid>
       <description>Dive into the mesmerizing universe of Particle Life, a subset of particle systems that demonstrates how simplicity breeds complexity. This post will guide you through the mathematical concepts and JavaScript implementation, shedding light on the emergent phenomena that make Particle Life so captivating.</description>
     </item>
   </channel>
